@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="author" content="Albert Lane">
+<meta name="description" content="SovereignAudits™ — Digital Fraud Audit Series. Independent forensic research, FaaF analysis, and Oregon regional dispatch. SEC No. 17684-273-411-436.">
+<title>SovereignAudits — News · albertlane.org</title>
+
+<!-- Fonts: loaded on page, used by both content and injected mesh layer -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+  /* ── DESIGN LAW ──────────────────────────────────────────────────────
+   * The page is the page. The mesh is not here.
+   * The Worker appends the mesh (Albert Escaped Rays + canary)
+   * to the response. This file contains ONLY content styles.
+   * T1 Theme: Quantum Fidelity / Regulatory Frost
+   ─────────────────────────────────────────────────────────────────── */
+
+  :root {
+    --bg:          #F9FAFB;
+    --bg-alt:      #F1F5F9;
+    --surface:     #FFFFFF;
+    --primary:     #1E40AF;
+    --primary-dk:  #1E3A8A;
+    --accent:      #60A5FA;
+    --teal:        #009B8E;
+    --gold:        #B45309;
+    --text:        #0F172A;
+    --text-2:      #334155;
+    --text-3:      #64748B;
+    --border:      #CBD5E1;
+    --border-lt:   #E2E8F0;
+    --font-disp:   'Cormorant Garamond', Georgia, serif;
+    --font-body:   'Inter', sans-serif;
+    --font-mono:   'JetBrains Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── MASTHEAD ──────────────────────────────────────────────────── */
+  .masthead {
+    background: #0F172A;
+    border-bottom: 3px solid var(--primary);
+    padding: 0 32px;
+  }
+  .masthead-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .masthead-brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 0;
+    text-decoration: none;
+  }
+  .masthead-logo {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  .masthead-divider {
+    width: 1px;
+    background: rgba(255,255,255,0.15);
+    margin: 12px 0;
+  }
+  .masthead-title {
+    font-family: var(--font-disp);
+    font-size: 22px;
+    font-weight: 300;
+    color: #F8FAFC;
+    letter-spacing: 0.02em;
+  }
+  .masthead-nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .masthead-nav a {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #94A3B8;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 4px;
+    transition: color 0.2s, background 0.2s;
+  }
+  .masthead-nav a:hover { color: var(--accent); background: rgba(96,165,250,0.07); }
+
+  /* ── DISPATCH BAR ──────────────────────────────────────────────── */
+  /* Z-axis zone data — populated by Worker via data attribute injection
+   * or displayed as placeholder when zone is unresolved */
+  .dispatch-bar {
+    background: var(--primary-dk);
+    padding: 8px 32px;
+    overflow: hidden;
+  }
+  .dispatch-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .dispatch-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+  .dispatch-ticker {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: #CBD5E1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .dispatch-sec {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: #475569;
+    flex-shrink: 0;
+    margin-left: auto;
+  }
+
+  /* ── LAYOUT ────────────────────────────────────────────────────── */
+  .page-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 48px 32px 96px;
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 64px;
+    align-items: start;
+  }
+
+  /* ── SECTION HEADER ────────────────────────────────────────────── */
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--primary);
+  }
+  .section-header h2 {
+    font-family: var(--font-disp);
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.01em;
+  }
+  .section-header .count {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-3);
+    letter-spacing: 0.12em;
+  }
+
+  /* ── ARTICLE CARDS ─────────────────────────────────────────────── */
+  .article-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .article-card {
+    padding: 28px 0;
+    border-bottom: 1px solid var(--border-lt);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+    align-items: start;
+  }
+  .article-card:first-child { padding-top: 0; }
+  .article-card:last-child { border-bottom: none; }
+
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .article-tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 3px;
+    background: var(--primary);
+    color: white;
+  }
+  .article-tag.faaf { background: #7C3AED; }
+  .article-tag.oregon { background: var(--teal); }
+  .article-tag.audit { background: var(--gold); color: white; }
+
+  .article-date {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-3);
+  }
+
+  .article-card h3 {
+    font-family: var(--font-disp);
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.25;
+    color: var(--text);
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+  .article-card h3 a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .article-card h3 a:hover { color: var(--primary); }
+
+  .article-excerpt {
+    font-size: 15px;
+    color: var(--text-2);
+    line-height: 1.65;
+    max-width: 600px;
+  }
+
+  .article-read-more {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--primary);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 12px;
+    padding: 6px 12px;
+    border: 1px solid var(--border-lt);
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+  .article-read-more:hover {
+    border-color: var(--primary);
+    background: rgba(30,64,175,0.04);
+  }
+  .article-read-more::after { content: '→'; }
+
+  /* ── FEATURED / LEAD ───────────────────────────────────────────── */
+  .article-card.featured {
+    background: var(--surface);
+    border: 1px solid var(--border-lt);
+    border-radius: 8px;
+    padding: 32px;
+    margin-bottom: 8px;
+    grid-column: 1 / -1;
+    grid-template-columns: 1fr;
+  }
+  .article-card.featured h3 {
+    font-size: 30px;
+  }
+
+  /* ── SIDEBAR ───────────────────────────────────────────────────── */
+  .sidebar { position: sticky; top: 32px; }
+
+  .sidebar-block {
+    background: var(--surface);
+    border: 1px solid var(--border-lt);
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 24px;
+  }
+  .sidebar-title {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-lt);
+  }
+
+  .sidebar-series-item {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-lt);
+    text-decoration: none;
+  }
+  .sidebar-series-item:last-child { border-bottom: none; }
+  .sidebar-series-item .ch {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #7C3AED;
+    margin-bottom: 2px;
+  }
+  .sidebar-series-item .title {
+    font-family: var(--font-disp);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.3;
+    transition: color 0.15s;
+  }
+  .sidebar-series-item:hover .title { color: var(--primary); }
+
+  .sidebar-ref-item {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-3);
+    padding: 5px 0;
+    border-bottom: 1px solid var(--border-lt);
+    line-height: 1.5;
+  }
+  .sidebar-ref-item:last-child { border-bottom: none; }
+  .sidebar-ref-item strong { color: var(--text-2); display: block; }
+
+  .zone-display {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--text-2);
+    padding: 10px 0;
+    text-align: center;
+  }
+  .zone-display .zone-val {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--teal);
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .zone-display .zone-lbl {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-3);
+  }
+
+  /* ── FOOTER ────────────────────────────────────────────────────── */
+  .footer {
+    background: #0F172A;
+    color: #64748B;
+    padding: 40px 32px;
+    border-top: 1px solid #1E293B;
+  }
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    align-items: center;
+  }
+  .footer-copy {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: #475569;
+    line-height: 1.8;
+  }
+  .footer-copy strong { color: #94A3B8; }
+  .footer-links {
+    display: flex;
+    gap: 16px;
+  }
+  .footer-links a {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #475569;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--accent); }
+
+  @media (max-width: 900px) {
+    .page-wrap { grid-template-columns: 1fr; gap: 40px; }
+    .sidebar { position: static; }
+    .masthead-nav { display: none; }
+  }
+  @media (max-width: 600px) {
+    .page-wrap { padding: 32px 16px 64px; }
+    .masthead { padding: 0 16px; }
+    .dispatch-bar { padding: 8px 16px; }
+    .footer { padding: 32px 16px; }
+    .footer-inner { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════ MASTHEAD -->
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="masthead-brand" href="/">
+      <span class="masthead-logo">SovereignAudits™</span>
+      <div class="masthead-divider"></div>
+      <span class="masthead-title">News &amp; Dispatch</span>
+    </a>
+    <nav class="masthead-nav">
+      <a href="/faaf/">FaaF Series</a>
+      <a href="/audit/">Audit Log</a>
+      <a href="/corpus/">Corpus</a>
+      <a href="https://albertlane.net">albertlane.net</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════ DISPATCH BAR -->
+<!-- Zone data is injected by Worker mesh via data attributes on al-rays-mesh.
+     This bar displays static data from the page; dynamic zone comes from mesh. -->
+<div class="dispatch-bar">
+  <div class="dispatch-inner">
+    <span class="dispatch-label">Z-Axis Dispatch</span>
+    <span class="dispatch-ticker" id="dispatch-ticker">
+      Oregon Regional Media Circuit · Cascadia Ground Zero · FaaF Series Active · Digital Fraud Audit
+    </span>
+    <span class="dispatch-sec">SEC-17684-273-411-436</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ MAIN CONTENT -->
+<main>
+  <div class="page-wrap">
+
+    <!-- ── PRIMARY FEED ─────────────────────── -->
+    <section>
+
+      <!-- FEATURED ARTICLE -->
+      <div class="article-card featured">
+        <div class="article-meta">
+          <span class="article-tag faaf">FaaF Series</span>
+          <span class="article-tag audit">Audit Active</span>
+          <span class="article-date">June 2026</span>
+        </div>
+        <h3>
+          <a href="/faaf/shadow-liquidity/">
+            The Architecture of Shadow Liquidity: Systemic Entropy, AI IP Extraction, and Cognitive Torsion
+          </a>
+        </h3>
+        <p class="article-excerpt">
+          A comprehensive forensic audit of the interlocking mechanisms through which financial capital, intellectual capital, and cognitive architecture are simultaneously co-opted by a single systemic extraction machine — and the specific decrees that govern its dismantlement.
+        </p>
+        <a class="article-read-more" href="/faaf/shadow-liquidity/">Read Full Report</a>
+      </div>
+
+      <div class="section-header">
+        <h2>Latest Dispatches</h2>
+        <span class="count">Oregon Circuit · Open Research</span>
+      </div>
+
+      <div class="article-list">
+
+        <article class="article-card">
+          <div>
+            <div class="article-meta">
+              <span class="article-tag faaf">FaaF Ch.4</span>
+              <span class="article-date">June 2026</span>
+            </div>
+            <h3><a href="/faaf/ch-4/">Phantom Port and the Revenue Toll Mechanism</a></h3>
+            <p class="article-excerpt">
+              Forensic audit of the Phantom Port mechanism: how platform operators charge network participants for ports and routes that do not correspond to delivered infrastructure — the financial sector's invisible toll booth.
+            </p>
+            <a class="article-read-more" href="/faaf/ch-4/">Read</a>
+          </div>
+        </article>
+
+        <article class="article-card">
+          <div>
+            <div class="article-meta">
+              <span class="article-tag">Canary System</span>
+              <span class="article-date">May 2026</span>
+            </div>
+            <h3><a href="/provenance/">Sovereign Canary™ — IP Forensics Toolkit v1.2</a></h3>
+            <p class="article-excerpt">
+              Release notes and forensic rationale for the zero-copy tee partition writer, append-only ProvenanceLedger with BLAKE3 tamper-detection, and the new <code>#[sovereign_mark]</code> proc-macro for compile-time canary injection.
+            </p>
+            <a class="article-read-more" href="/provenance/">Read</a>
+          </div>
+        </article>
+
+        <article class="article-card">
+          <div>
+            <div class="article-meta">
+              <span class="article-tag oregon">Oregon · SEC</span>
+              <span class="article-date">May 2026</span>
+            </div>
+            <h3><a href="/sec-filing/">SEC Whistleblower Filing: Platform IP Extraction and the One-Way Mirror</a></h3>
+            <p class="article-excerpt">
+              Full forensic chain-of-custody declaration SC-EVIDENCE-001 documenting platform extraction events, methodology, timestamps, and cryptographic proof chain submitted under SEC Whistleblower No. 17684-273-411-436.
+            </p>
+            <a class="article-read-more" href="/sec-filing/">Read</a>
+          </div>
+        </article>
+
+        <article class="article-card">
+          <div>
+            <div class="article-meta">
+              <span class="article-tag audit">AI Audit</span>
+              <span class="article-date">April 2026</span>
+            </div>
+            <h3><a href="/faaf/ai-extraction/">The Absence of Space: Forensic Significance of the Gap Between Claimed and Measured State</a></h3>
+            <p class="article-excerpt">
+              Applying Tom Murphy VII's Absence of Space theorem to AI platform forensics. The productivity-compensation divergence and Phantom Port mechanism are both measurable through the gap between claimed platform state and independently audited platform state.
+            </p>
+            <a class="article-read-more" href="/faaf/ai-extraction/">Read</a>
+          </div>
+        </article>
+
+        <article class="article-card">
+          <div>
+            <div class="article-meta">
+              <span class="article-tag faaf">FaaF Series</span>
+              <span class="article-date">March 2026</span>
+            </div>
+            <h3><a href="/faaf/cognitive-torsion/">Cognitive Torsion: OCEAN Trait Rotation Under Corporate Algorithmic Torque</a></h3>
+            <p class="article-excerpt">
+              Helical rotation applied to the Big Five personality model. A taxonomy of the specific corporate torque vectors that mutate Conscientiousness into Neuroticism, Openness into ideological rigidity, and Agreeableness into outrage dependency.
+            </p>
+            <a class="article-read-more" href="/faaf/cognitive-torsion/">Read</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ── SIDEBAR ───────────────────────────── -->
+    <aside class="sidebar">
+
+      <!-- Z-axis zone display — populated by Worker mesh injection -->
+      <div class="sidebar-block">
+        <div class="sidebar-title">Z-Axis Zone</div>
+        <div class="zone-display">
+          <span class="zone-val" id="zone-val">ORG</span>
+          <span class="zone-lbl">Oregon Media District</span>
+        </div>
+        <div class="sidebar-ref-item" style="margin-top:12px;">
+          <strong>Transport</strong>
+          Z-Axis Mesh v1 · Cascadia Ground Zero
+        </div>
+        <div class="sidebar-ref-item">
+          <strong>Protocol</strong>
+          FCC Vertical Location Ref. (20-32, Jul 2020)
+        </div>
+      </div>
+
+      <!-- FaaF Series index -->
+      <div class="sidebar-block">
+        <div class="sidebar-title">FaaF Audit Series</div>
+        <a class="sidebar-series-item" href="/faaf/shadow-liquidity/">
+          <span class="ch">Report 2026</span>
+          <span class="title">Shadow Liquidity · Systemic Entropy</span>
+        </a>
+        <a class="sidebar-series-item" href="/faaf/ch-4/">
+          <span class="ch">Ch. 4</span>
+          <span class="title">Phantom Port · Revenue Toll</span>
+        </a>
+        <a class="sidebar-series-item" href="/faaf/cognitive-torsion/">
+          <span class="ch">Ch. 5</span>
+          <span class="title">Cognitive Torsion · OCEAN Rotation</span>
+        </a>
+        <a class="sidebar-series-item" href="/faaf/ai-extraction/">
+          <span class="ch">Ch. 6</span>
+          <span class="title">AI Extraction · One-Way Mirror</span>
+        </a>
+        <a class="sidebar-series-item" href="/faaf/">
+          <span class="ch">Index</span>
+          <span class="title">Full Series Index</span>
+        </a>
+      </div>
+
+      <!-- Filing references -->
+      <div class="sidebar-block">
+        <div class="sidebar-title">Active Filings</div>
+        <div class="sidebar-ref-item">
+          <strong>SEC Whistleblower</strong>
+          No. 17684-273-411-436
+        </div>
+        <div class="sidebar-ref-item">
+          <strong>Circuit Court</strong>
+          Washington County · Oregon
+        </div>
+        <div class="sidebar-ref-item">
+          <strong>Jurisdiction</strong>
+          Oregon Primary · England/Wales Secondary
+        </div>
+        <div class="sidebar-ref-item">
+          <strong>License</strong>
+          All Rights Reserved · No AI Training Use
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</main>
+
+<!-- ═══════════════════════════════════════ FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-copy">
+      <strong>© 2026 Albert Lane · SovereignAudits™ · All Rights Reserved</strong><br>
+      SEC Whistleblower No. 17684-273-411-436 · albertlane.net · albertlane.org · albertlane.uk<br>
+      No AI training use. No index without explicit written authorization. Article IV, §4.04–4.05 apply.
+    </div>
+    <div class="footer-links">
+      <a href="/license/">License</a>
+      <a href="https://albertlane.net">Main Site</a>
+      <a href="/mesh/health">Mesh Status</a>
+    </div>
+  </div>
+</footer>
+
+<!-- MESH INJECTION TARGET -->
+<!-- The Worker appends al-mesh-rays style + div here via injectMeshLayer() -->
+<!-- Nothing in this file activates the Escaped Rays — the mesh does. -->
+
+<script>
+  // Page-level script: read zone from injected mesh div, update display
+  // This is NOT routing logic — it is display logic reading from the mesh.
+  (function () {
+    const meshEl = document.querySelector('[data-zone]');
+    if (!meshEl) return;
+    const zone = meshEl.getAttribute('data-zone') || 'unknown';
+    const depth = meshEl.getAttribute('data-depth') || '0';
+    const zoneVal = document.getElementById('zone-val');
+    const ticker = document.getElementById('dispatch-ticker');
+    if (zoneVal && zone !== 'unknown') {
+      zoneVal.textContent = zone.toUpperCase().replace('-', ' ');
+    }
+    if (ticker && zone !== 'unknown') {
+      ticker.textContent = [
+        'Oregon Regional Media Circuit',
+        '·',
+        zone.toUpperCase().replace('-', ' '),
+        '·',
+        'Z-Depth: ' + parseFloat(depth).toFixed(2),
+        '·',
+        'FaaF Series Active'
+      ].join(' ');
+    }
+  })();
+</script>
+
+</body>
+</html>

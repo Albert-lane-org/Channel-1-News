@@ -1,0 +1,52 @@
+# wrangler.news.toml
+# Albert Lane · SovereignAudits™
+# Deployment: news-albertlane-org-mesh (Worker)
+# Custom domain: news.albertlane.org
+# SEC Whistleblower No. 17684-273-411-436
+
+name               = "news-albertlane-org-mesh"
+main               = "news-mesh-worker.ts"
+compatibility_date = "2026-06-01"
+compatibility_flags = ["nodejs_compat"]
+
+# ── CUSTOM DOMAIN ─────────────────────────────────────────────────────────
+# Routes all traffic to news.albertlane.org through the mesh Worker.
+# Pages project sits behind this at NEWS_PAGES_ORIGIN (env var).
+# zone_name MUST be "albertlane.org" — not albertlane.net.
+[[routes]]
+pattern   = "news.albertlane.org/*"
+zone_name = "albertlane.org"
+
+# ── KV BINDING ────────────────────────────────────────────────────────────
+# NEWS_ALBERTLANE_ORG — created 2026-06-12
+# Stores: dispatch events, serve telemetry, unauth violation logs
+[[kv_namespaces]]
+binding = "NEWS_KV"
+id      = "b24802a2b041420d80980f27d4f5d39f"
+
+# ── ENVIRONMENT VARIABLES ─────────────────────────────────────────────────
+# NEWS_PAGES_ORIGIN: set to Cloudflare Pages deployment URL
+# e.g. https://news-albertlane-org.pages.dev
+# Set via wrangler secret or [vars] block as appropriate
+
+[vars]
+NEWS_PAGES_ORIGIN = "https://news-albertlane-org.pages.dev"
+
+# ── SECRETS (set via `wrangler secret put`) ───────────────────────────────
+# SECURITY: WEBHOOK_LEDGER_SECRET must NEVER be interpolated directly in
+# shell run: blocks via ${{ secrets.X }} — bind at step-level env: only,
+# then pipe via printf '%s'. Supply chain attack surface.
+#
+# wrangler secret put WEBHOOK_LEDGER_SECRET --name news-albertlane-org-mesh
+#
+# [secrets]
+# WEBHOOK_LEDGER_SECRET  ← GitHub webhook HMAC-SHA256 signing secret
+
+# ── OBSERVABILITY ─────────────────────────────────────────────────────────
+[observability]
+enabled = true
+
+# ── CRON: OPTIONAL DISPATCH AUDIT ────────────────────────────────────────
+# Bi-hourly audit of KV dispatch queue (Article VIII compliance cadence)
+[triggers]
+crons = ["0 */2 * * *"]
