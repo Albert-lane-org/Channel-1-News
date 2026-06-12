@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   health:
-    name: JSON and asset health
+    name: Asset health
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4.2.2
