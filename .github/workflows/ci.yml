@@ -1,0 +1,50 @@
+# Authored: Albert Lane | Documented: Claude Sonnet 4.6 | 2026-06-12
+# NOTE: This repo's Actions policy blocks marketplace actions (verified:
+# any workflow using actions/checkout or actions/setup-python ends in
+# startup_failure, while action-free workflows run). Until an admin
+# relaxes Settings > Actions > General > "Allowed actions" to permit
+# actions/*, this workflow checks out via plain git and uses the
+# runner's preinstalled python3 (3.12 on ubuntu-latest).
+name: CI
+
+on:
+  push:
+    branches: [main, 'claude/**']
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  health:
+    name: Asset health
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (git, no marketplace actions)
+        run: |
+          git init -q .
+          git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          git fetch -q --depth 1 origin "$GITHUB_SHA"
+          git checkout -q FETCH_HEAD
+
+      - name: Validate JSON files
+        run: |
+          find . -name '*.json' -not -path './.git/*' | while read f; do
+            python3 -c "import json; json.load(open('$f'))" && echo "[OK] $f" || { echo "[FAIL] $f"; exit 1; }
+          done
+
+      - name: XML well-formedness
+        run: |
+          find . -name '*.xml' -not -path './.git/*' | while read f; do
+            python3 -c "import xml.etree.ElementTree as ET; ET.parse('$f')" && echo "[OK] $f" || { echo "[FAIL] $f"; exit 1; }
+          done
+
+      - name: TOML validation
+        run: |
+          find . -name '*.toml' -not -path './.git/*' | while read f; do
+            python3 -c "import tomllib; tomllib.loads(open('$f').read())" && echo "[OK] $f" || { echo "[FAIL] $f"; exit 1; }
+          done
+
+      - name: Verify CLAUDE.md present
+        run: test -f CLAUDE.md && echo '[OK] CLAUDE.md present' || { echo '[FAIL] CLAUDE.md missing'; exit 1; }
