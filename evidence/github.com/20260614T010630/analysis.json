@@ -1,0 +1,115 @@
+{
+  "url": "https://github.com",
+  "captured_at": "2026-06-14T01:06:30Z",
+  "date_forensics": {
+    "signals": {
+      "http_date": "Sun, 14 Jun 2026 01:06:28 GMT",
+      "time_elements": [
+        "2026",
+        "2024-02"
+      ]
+    },
+    "inconsistencies": [],
+    "backdating_risk": "LOW"
+  },
+  "ai_content": {
+    "score": 43,
+    "risk_level": "MEDIUM",
+    "findings": [
+      {
+        "type": "ai_phrase_patterns",
+        "risk": "LOW",
+        "detail": "1 AI-characteristic phrase pattern(s) detected",
+        "hits": [
+          {
+            "pattern": "verb \u2014 LLM business-writing clich\u00e9",
+            "count": 4
+          }
+        ]
+      },
+      {
+        "type": "vocabulary_diversity",
+        "risk": "HIGH",
+        "detail": "Type-token ratio=0.0456 \u2014 very low lexical diversity (< 0.22)"
+      },
+      {
+        "type": "paragraph_uniformity",
+        "risk": "LOW",
+        "detail": "Paragraph StdDev=13.7 words \u2014 unusually consistent structure across all blocks"
+      }
+    ],
+    "sentences_analyzed": 38,
+    "text_blocks_analyzed": 36,
+    "interpretation": "Moderate AI-generation indicators present"
+  },
+  "artifacts": {
+    "missing_artifacts": [
+      {
+        "artifact": "potential auth/paywall gate",
+        "signals": [
+          "login",
+          "premium",
+          "sign in",
+          "sign-in",
+          "subscribe"
+        ],
+        "note": "Multiple auth/paywall keyword signals \u2014 some content may require authentication"
+      }
+    ],
+    "present_artifacts": [
+      {
+        "artifact": "page_title",
+        "value": "GitHub \u00b7 Change is constant. GitHub keeps you ahead. \u00b7 GitHubAmerican AirlinesDuolingoErnst and YoungFordInfoSysMercado LibreMercedes-BenzShopifyPhilipsSoci\u00e9t\u00e9 G\u00e9n\u00e9raleSpotifyVodafoneAmerican AirlinesDuolingoErnst and YoungFordInfoSysMercado LibreMercedes-BenzShopifyPhilipsSoci\u00e9t\u00e9 G\u00e9n\u00e9raleSpotifyVodafoneInstagramTikTokTwitch"
+      },
+      {
+        "artifact": "source_html_bytes",
+        "bytes": 570567
+      },
+      {
+        "artifact": "html_comments",
+        "count": 6
+      },
+      {
+        "artifact": "meta_tags",
+        "count": 43,
+        "keys": [
+          "route-pattern",
+          "route-controller",
+          "route-action",
+          "fetch-nonce",
+          "current-catalog-service-hash",
+          "request-id",
+          "html-safe-nonce",
+          "visitor-payload",
+          "visitor-hmac",
+          "page-subject",
+          "github-keyboard-shortcuts",
+          "google-site-verification",
+          "octolytics-url",
+          "octolytics-page-type",
+          "octolytics-revenue-play",
+          "viewport",
+          "description",
+          "fb:app_id",
+          "apple-itunes-app",
+          "twitter:image"
+        ]
+      },
+      {
+        "artifact": "time_elements",
+        "count": 2,
+        "values": [
+          "2026",
+          "2024-02"
+        ]
+      },
+      {
+        "artifact": "canonical_url",
+        "value": "https://github.com"
+      }
+    ],
+    "total_missing": 1,
+    "total_present": 6,
+    "summary": "1 restricted/missing artifact(s); 6 accessible artifact(s) documented"
+  }
+}
