@@ -1,0 +1,31 @@
+{
+  "tool": "forensic_fetch.py v1.0",
+  "sec_ref": "17684-273-411-436",
+  "url": "https://github.com",
+  "captured_at": "2026-06-14T01:06:30Z",
+  "evidence_dir": "evidence/github.com/20260614T010630",
+  "artifacts": {
+    "source.html": {
+      "sha256": "9c44d4fadc577012b0dd1642436f771274bbd77a8fca8b32337a2dfec2a8c40b",
+      "bytes": 570663
+    },
+    "headers.json": {
+      "sha256": "274657aea16630afb8c586a939bbcd8f3c2ad18196cd985882b49c3af86bb010"
+    },
+    "robots.json": {
+      "sha256": "b72fe4fe118133fcd78673e42bae19394c21392df7d2d07285c39a3a456c0e57"
+    },
+    "analysis.json": {
+      "sha256": "445dc565200b16a62eacb42146021d33993a76177a356af3479bb603a4e6231f"
+    }
+  },
+  "summary": {
+    "backdating_risk": "LOW",
+    "ai_content_risk": "MEDIUM",
+    "ai_content_score": 43,
+    "missing_count": 1,
+    "date_signals": 2,
+    "inconsistencies": []
+  },
+  "manifest_sha256": "981e7654189833df7014c9bd50df28251983dcc96e70c35b959d8de2e01f0588"
+}
